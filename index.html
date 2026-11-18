@@ -183,6 +183,47 @@ h2{font-size:clamp(38px,6vw,58px);color:#1d3548;letter-spacing:-.025em}
 }
 </style>
 
+
+<style id="hero-photo-and-cleanup">
+/* Remove the stray literal text and make the invitation cover a two-column photo layout. */
+.frame{
+ width:min(100%,980px);min-height:680px;padding:0;display:grid;
+ grid-template-columns:minmax(0,1fr) minmax(0,.92fr);
+ align-items:stretch;justify-content:stretch;text-align:left;
+ border:0;outline:0;background:#f8f7f2;overflow:hidden;
+}
+.frame:before,.frame:after{content:none!important;display:none!important}
+.ornament{display:none}
+.hero-content{
+ grid-column:1;grid-row:1;align-self:center;max-width:none;
+ padding:64px clamp(26px,5vw,66px);text-align:left;
+}
+.hero-content:before,.hero-content:after{display:none!important}
+.hero-photo{
+ grid-column:2;grid-row:1;min-width:0;min-height:100%;
+ position:relative;overflow:hidden;background:#d8dfdc;
+}
+.hero-photo:after{
+ content:"";position:absolute;inset:0;
+ background:linear-gradient(180deg,#1b30400a 50%,#152a3a40 100%);
+ pointer-events:none;
+}
+.hero-photo img{width:100%;height:100%;min-height:680px;object-fit:cover;object-position:center 42%;display:block;filter:saturate(.88)}
+.hero h1{font-size:clamp(52px,6.4vw,82px);line-height:.9}
+.rule{margin:24px 0}
+.subtitle{letter-spacing:.12em}
+.date{margin-top:32px}
+.hero .scroll{color:#65737d}
+@media(max-width:650px){
+ .frame{display:flex;flex-direction:column;min-height:0;text-align:center}
+ .hero-content{padding:58px 25px 42px;text-align:center}
+ .hero h1{font-size:clamp(54px,14vw,74px)}
+ .rule{margin:22px auto}
+ .hero-photo{width:100%;height:330px;min-height:330px}
+ .hero-photo img{height:330px;min-height:330px;object-position:center 38%}
+}
+</style>
+
 </head>
 <body>
 
@@ -206,8 +247,8 @@ h2{font-size:clamp(38px,6vw,58px);color:#1d3548;letter-spacing:-.025em}
     <div class="name-reveal-date">25 DECEMBER 2026 · 10:00 AM</div>
   </div>
 </div>
-\n<nav class="langbar" aria-label="Language"><button class="active" data-lang="en">EN</button><button data-lang="ja">日本語</button><button data-lang="my">မြန်မာ</button></nav>
-<header class="hero"><div class="frame"><div class="ornament one"></div><div class="ornament two"></div><div class="hero-content"><div class="eyebrow" data-i18n="eyebrow">WITH JOY IN OUR HEARTS</div><h1>Masaki<br><span class="amp">&</span><br>Shwe Yi</h1><div class="hero-fullnames">Masaki Satake &amp; Shwe Yi Pyae Soan</div><div class="rule"></div><div class="subtitle" data-i18n="invite">Wedding Invitation</div><div class="date">25 · 12 · 2026</div><div class="time">10:00 AM — 12:00 PM</div><div class="venue">Our Home</div></div></div><div class="scroll" data-i18n="scroll">PLEASE SCROLL</div></header>
+<nav class="langbar" aria-label="Language"><button class="active" data-lang="en">EN</button><button data-lang="ja">日本語</button><button data-lang="my">မြန်မာ</button></nav>
+<header class="hero"><div class="frame"><div class="ornament one"></div><div class="ornament two"></div><div class="hero-content"><div class="eyebrow" data-i18n="eyebrow">WITH JOY IN OUR HEARTS</div><h1>Masaki<br><span class="amp">&</span><br>Shwe Yi</h1><div class="hero-fullnames">Masaki Satake &amp; Shwe Yi Pyae Soan</div><div class="rule"></div><div class="subtitle" data-i18n="invite">Wedding Invitation</div><div class="date">25 · 12 · 2026</div><div class="time">10:00 AM — 12:00 PM</div><div class="venue">Our Home</div></div><div class="hero-photo"><img src="photos/photo-5.jpg" alt="Masaki and Shwe Yi together"></div></div><div class="scroll" data-i18n="scroll">PLEASE SCROLL</div></header>
 <section class="section"><div class="section-inner"><div class="kicker" data-i18n="together">A DAY TO CELEBRATE LOVE</div><h2 data-i18n="dear">Dear Family & Friends</h2><p class="message" data-lang-content="en">With grateful hearts, we invite you to share in the joy of our wedding celebration. Your presence will make our special day even more meaningful.</p><p class="message jp hidden" data-lang-content="ja">私たちの新たな門出を、皆さまと一緒にお祝いできましたら幸いです。心を込めて、皆さまをお招きいたします。</p><p class="message mm hidden" data-lang-content="my">ကျွန်ုပ်တို့၏ မင်္ဂလာနေ့လေးတွင် မိသားစုနှင့် မိတ်ဆွေများအတူ ပျော်ရွှင်စွာ ဆင်နွှဲနိုင်ရန် လေးစားချစ်ခင်စွာ ဖိတ်ကြားအပ်ပါသည်။</p></div></section>
 <section class="section details"><div class="section-inner"><div class="kicker" data-i18n="when">SAVE THE DATE</div><h2 data-i18n="celebrate">The Celebration</h2><div class="countdown" id="countdown"><div class="unit"><strong id="days">—</strong><span data-i18n="days">DAYS</span></div><div class="unit"><strong id="hours">—</strong><span data-i18n="hours">HOURS</span></div><div class="unit"><strong id="minutes">—</strong><span data-i18n="minutes">MINUTES</span></div><div class="unit"><strong id="seconds">—</strong><span data-i18n="seconds">SECONDS</span></div></div><div class="detail-card"><div class="detail-row"><div class="detail-label" data-i18n="dateLabel">DATE</div><div class="detail-value">Friday, December 25, 2026</div></div><div class="detail-row"><div class="detail-label" data-i18n="timeLabel">TIME</div><div class="detail-value">10:00 AM – 12:00 PM</div></div><div class="detail-row"><div class="detail-label" data-i18n="venueLabel">VENUE</div><div class="detail-value">Our Home</div><div class="detail-value small" data-i18n="venueNote">We look forward to welcoming you.</div></div></div></div></section>
 <section class="section"><div class="section-inner"><div class="kicker" data-i18n="withLove">WITH LOVE</div><h2>Masaki Satake <span class="amp">&</span><br>Shwe Yi Pyae Soan</h2><div class="rule"></div><p class="message" data-lang-content="en">Thank you for being part of our story. We cannot wait to celebrate this beautiful beginning with you.</p><p class="message jp hidden" data-lang-content="ja">私たちの大切な一日を共に過ごしてくださることに、心より感謝いたします。</p><p class="message mm hidden" data-lang-content="my">ကျွန်ုပ်တို့၏ ဘဝခရီးသစ်အစတွင် အတူရှိပေးကြမည့်အတွက် အထူးကျေးဇူးတင်ရှိပါသည်။</p></div></section>
