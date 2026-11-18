@@ -1,120 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amoré Wedding Tokyo</title>
-    
-    <!-- CRITICAL POLYFILLS FOR GENAI SDK -->
-    <script>
-      window.global = window;
-      window.process = {
-        env: { DEBUG: undefined },
-        version: '',
-        nextTick: function(cb) { setTimeout(cb, 0); }
-      };
-    </script>
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f1e8"><meta name="description" content="Wedding invitation of Masaki Satake and Shwe Yi Pyae Soan — December 25, 2026.">
+<title>Masaki & Shwe Yi — Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@400;500&family=Noto+Sans+Myanmar:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f8f4ec;--cream:#efe6d7;--gold:#b3945d;--deep:#75603f;--ink:#4b4034;--muted:#8d806e}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:'Cormorant Garamond',serif}button{font:inherit}.langbar{position:fixed;z-index:10;top:16px;right:16px;display:flex;gap:4px;padding:5px;border:1px solid #d8c8a8;border-radius:30px;background:#f8f4ecdf;backdrop-filter:blur(8px)}.langbar button{border:0;background:transparent;color:var(--deep);padding:7px 10px;border-radius:22px;font:500 11px 'Noto Sans JP',sans-serif;cursor:pointer}.langbar button.active{background:var(--deep);color:#fff}.hero{min-height:100svh;display:grid;place-items:center;padding:76px 22px 48px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 42%,#fffdf8 0,#f8f4ec 54%,#eee4d4 100%)}.frame{width:min(100%,620px);min-height:690px;border:1px solid #c9ae7c;outline:1px solid #e3d5bd;outline-offset:7px;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:60px 28px}.frame:before,.frame:after{content:'❧';position:absolute;color:#c2a875;font-size:44px;opacity:.8}.frame:before{top:12px;left:18px;transform:rotate(-35deg)}.frame:after{bottom:12px;right:18px;transform:rotate(145deg)}.ornament{position:absolute;width:170px;height:170px;border:1px solid #d9c7a4;border-radius:50%;opacity:.26}.ornament.one{top:-90px;right:-65px}.ornament.two{bottom:-95px;left:-65px}.hero-content{max-width:470px;position:relative;z-index:1}.eyebrow{font:500 10px 'Noto Sans JP',sans-serif;letter-spacing:.32em;color:var(--gold);text-transform:uppercase}.hero h1{font-weight:400;font-size:clamp(54px,11vw,88px);line-height:.92;margin:34px 0 16px;color:#806b49}.amp{font-style:italic;color:#b69a68;font-size:.76em}.rule{width:70px;height:1px;background:#b99d6c;margin:27px auto}.subtitle{font-size:19px;letter-spacing:.17em;color:var(--deep)}.date{font-size:25px;letter-spacing:.12em;margin-top:42px;color:var(--deep)}.time{font:11px 'Noto Sans JP',sans-serif;letter-spacing:.2em;color:var(--muted);margin-top:9px}.venue{font-size:23px;margin-top:24px;color:var(--deep)}.scroll{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font:9px 'Noto Sans JP',sans-serif;letter-spacing:.25em;color:#a18b66}.scroll:after{content:'↓';display:block;text-align:center;font-size:17px;margin-top:7px}.section{padding:95px 22px;text-align:center}.section-inner{max-width:760px;margin:auto}.kicker{font:10px 'Noto Sans JP',sans-serif;letter-spacing:.3em;color:var(--gold)}h2{font-weight:400;font-size:clamp(36px,7vw,52px);color:#806b49;margin:16px 0 24px}.message{font-size:22px;line-height:1.6;max-width:600px;margin:0 auto;color:#6d5c45}.message.jp,.message.mm{font:14px/2 'Noto Sans JP','Noto Sans Myanmar',sans-serif}.message.mm{font-family:'Noto Sans Myanmar',sans-serif}.countdown{display:flex;justify-content:center;gap:clamp(12px,4vw,38px);margin:42px auto 0}.unit strong{display:block;font-size:42px;font-weight:400;color:#8d744c}.unit span{font:9px 'Noto Sans JP',sans-serif;letter-spacing:.16em;color:var(--muted)}.details{background:#f0e8db}.detail-card{max-width:560px;margin:36px auto 0;padding:42px 22px;border:1px solid #cbb58c;outline:1px solid #e2d5bd;outline-offset:6px}.detail-row{padding:17px 0;border-bottom:1px solid #ddcfb7}.detail-row:last-child{border:0}.detail-label{font:9px 'Noto Sans JP',sans-serif;letter-spacing:.25em;color:var(--gold)}.detail-value{font-size:27px;color:#6f5a3b;margin-top:8px}.detail-value.small{font-size:19px}.footer{padding:58px 20px 70px;text-align:center}.footer .names{font-size:42px;color:#806b49}.footer p{font:10px 'Noto Sans JP',sans-serif;letter-spacing:.18em;color:var(--muted)}.hidden{display:none!important}@media(max-width:520px){.frame{min-height:620px;padding:45px 18px}.hero h1{font-size:60px}.section{padding:76px 22px}.message{font-size:19px}}@media(prefers-reduced-motion:no-preference){.hero-content{animation:appear 1.4s ease both}@keyframes appear{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}}
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&family=Great+Vibes&family=Alex+Brush&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;600&family=Zen+Maru+Gothic:wght@400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@300;400;500&family=Noto+Serif+Myanmar:wght@400;600&family=Padauk:wght@400;700&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              serif: ['var(--font-main)', 'serif'],
-              script: ['"Great Vibes"', 'cursive'],
-              sans: ['"Noto Sans JP"', 'sans-serif'],
-            },
-            colors: {
-              'wedding-gold': 'rgb(var(--color-primary) / <alpha-value>)',
-              'wedding-sand': 'rgb(var(--color-bg-tint) / <alpha-value>)',
-              'wedding-text': 'rgb(var(--color-text) / <alpha-value>)',
-              'wedding-card': 'rgb(var(--color-card) / <alpha-value>)',
-              'wedding-border': 'rgb(var(--color-border) / <alpha-value>)',
-            },
-            animation: {
-              'fade-in': 'fadeIn 1.5s ease-in-out',
-              'slide-in': 'slideIn 0.3s ease-out forwards',
-            },
-            keyframes: {
-              fadeIn: {
-                '0%': { opacity: '0', transform: 'translateY(10px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-              slideIn: {
-                '0%': { transform: 'translateX(100%)' },
-                '100%': { transform: 'translateX(0)' },
-              }
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-      body {
-        font-family: var(--font-main), sans-serif;
-        color: rgb(var(--color-text));
-        background-color: #FDFBF7;
-      }
-      h1, h2, h3, .font-serif {
-        font-family: var(--font-main), serif;
-      }
-      /* Optional separate heading font, per couple — wins over the rule above via higher
-         class-selector specificity on any heading whose className was switched to font-title
-         (see App.tsx). Falls back to --font-main for every couple that doesn't set titleFonts. */
-      .font-title {
-        font-family: var(--font-title), serif;
-      }
-      .font-script {
-        font-family: 'Great Vibes', cursive;
-      }
-      /* Cleaner, more legible script than Great Vibes — used for khant_aye's cover names only. */
-      .font-script-khant {
-        font-family: 'Alex Brush', cursive;
-      }
-      /* Vertical writing utility for Japanese look */
-      .writing-vertical {
-        writing-mode: vertical-rl;
-        text-orientation: upright;
-      }
-      /* Continuously auto-scrolling gallery strip ("moving pictures") — used for khant_aye's
-         gallery only. The image list is rendered twice back-to-back so translateX(-50%) loops
-         seamlessly back to the start with no visible jump. */
-      @keyframes gallery-scroll {
-        from { transform: translateX(0); }
-        to { transform: translateX(-50%); }
-      }
-      .animate-gallery-scroll {
-        animation: gallery-scroll 50s linear infinite;
-      }
-      .animate-gallery-scroll:hover {
-        animation-play-state: paused;
-      }
-    </style>
+/* Interactive invitation cover */
+body:not(.opened)>nav,body:not(.opened)>header,body:not(.opened)>section,body:not(.opened)>footer{visibility:hidden}
+.opening-cover{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:24px;background:radial-gradient(ellipse at center,#fffdf8 0%,#f4ecdf 72%,#e9ddc9 100%);transition:opacity .9s ease,visibility .9s ease}
+.opening-cover::before,.opening-cover::after{content:"";position:absolute;inset:18px;border:1px solid #c8ad7b;pointer-events:none}
+.opening-cover::after{inset:25px;border-color:#e0d2b7}
+.cover-card{width:min(100%,440px);min-height:570px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 28px;background:linear-gradient(145deg,#fffdf9,#f6efe4);border:1px solid #c7aa75;box-shadow:0 18px 55px #806b4920;color:#75603f;cursor:pointer;transition:transform .35s ease,box-shadow .35s ease}
+.cover-card:hover{transform:translateY(-4px);box-shadow:0 24px 65px #806b4930}
+.cover-card:before,.cover-card:after{content:"❧";position:absolute;color:#b99b67;font-size:42px}
+.cover-card:before{top:15px;left:19px;transform:rotate(-35deg)}
+.cover-card:after{bottom:15px;right:19px;transform:rotate(145deg)}
+.cover-kicker{font:10px 'Noto Sans JP',sans-serif;letter-spacing:.32em;color:#ad925f}
+.cover-monogram{width:76px;height:76px;border:1px solid #c7aa75;border-radius:50%;display:grid;place-items:center;margin:25px auto 27px;font-size:31px;color:#a98a55}
+.cover-names{font-size:clamp(42px,10vw,60px);line-height:.95;font-weight:400;color:#806b49;margin:0}
+.cover-names span{font-style:italic;color:#b69a68;font-size:.75em}
+.cover-rule{width:64px;height:1px;background:#b99d6c;margin:25px auto}
+.cover-date{font-size:18px;letter-spacing:.13em}
+.cover-venue{font-size:20px;margin-top:10px}
+.open-button{margin-top:36px;padding:13px 28px;border:1px solid #b99d6c;background:#806b49;color:#fffaf1;font:11px 'Noto Sans JP',sans-serif;letter-spacing:.18em;cursor:pointer;transition:background .2s ease}
+.open-button:hover{background:#9b8052}
+.cover-hint{font:9px 'Noto Sans JP',sans-serif;letter-spacing:.16em;color:#9b896c;margin-top:15px}
+.opening-cover.dismissed{opacity:0;visibility:hidden;pointer-events:none}
+@media(max-width:520px){.cover-card{min-height: min(76svh,570px);padding:40px 20px}.opening-cover:before{inset:12px}.opening-cover:after{inset:18px}}
+@media(prefers-reduced-motion:no-preference){.cover-card{animation:coverRise 1s ease both}@keyframes coverRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}}
 
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-    "vite": "https://esm.sh/vite@^7.3.0",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
-  }
+</style></head>
+<body>
+
+<div class="opening-cover" id="openingCover" role="button" tabindex="0" aria-label="Open wedding invitation">
+  <div class="cover-card">
+    <div class="cover-kicker">A CELEBRATION OF LOVE</div>
+    <div class="cover-monogram">M <span style="font-style:italic;color:#b69a68">&</span> S</div>
+    <h1 class="cover-names">Masaki<br><span>&</span><br>Shwe Yi</h1>
+    <div class="cover-rule"></div>
+    <div class="cover-date">25 · 12 · 2026</div>
+    <div class="cover-venue">Our Home</div>
+    <button class="open-button" id="openInvitation" type="button">OPEN INVITATION</button>
+    <div class="cover-hint">PLEASE TAP TO OPEN</div>
+  </div>
+</div>
+
+<nav class="langbar" aria-label="Language"><button class="active" data-lang="en">EN</button><button data-lang="ja">日本語</button><button data-lang="my">မြန်မာ</button></nav>
+<header class="hero"><div class="frame"><div class="ornament one"></div><div class="ornament two"></div><div class="hero-content"><div class="eyebrow" data-i18n="eyebrow">WITH JOY IN OUR HEARTS</div><h1>Masaki<br><span class="amp">&</span><br>Shwe Yi</h1><div class="rule"></div><div class="subtitle" data-i18n="invite">Wedding Invitation</div><div class="date">25 · 12 · 2026</div><div class="time">10:00 AM — 12:00 PM</div><div class="venue">Our Home</div></div></div><div class="scroll" data-i18n="scroll">PLEASE SCROLL</div></header>
+<section class="section"><div class="section-inner"><div class="kicker" data-i18n="together">A DAY TO CELEBRATE LOVE</div><h2 data-i18n="dear">Dear Family & Friends</h2><p class="message" data-lang-content="en">With grateful hearts, we invite you to share in the joy of our wedding celebration. Your presence will make our special day even more meaningful.</p><p class="message jp hidden" data-lang-content="ja">私たちの新たな門出を、皆さまと一緒にお祝いできましたら幸いです。心を込めて、皆さまをお招きいたします。</p><p class="message mm hidden" data-lang-content="my">ကျွန်ုပ်တို့၏ မင်္ဂလာနေ့လေးတွင် မိသားစုနှင့် မိတ်ဆွေများအတူ ပျော်ရွှင်စွာ ဆင်နွှဲနိုင်ရန် လေးစားချစ်ခင်စွာ ဖိတ်ကြားအပ်ပါသည်။</p></div></section>
+<section class="section details"><div class="section-inner"><div class="kicker" data-i18n="when">SAVE THE DATE</div><h2 data-i18n="celebrate">The Celebration</h2><div class="countdown" id="countdown"><div class="unit"><strong id="days">—</strong><span data-i18n="days">DAYS</span></div><div class="unit"><strong id="hours">—</strong><span data-i18n="hours">HOURS</span></div><div class="unit"><strong id="minutes">—</strong><span data-i18n="minutes">MINUTES</span></div><div class="unit"><strong id="seconds">—</strong><span data-i18n="seconds">SECONDS</span></div></div><div class="detail-card"><div class="detail-row"><div class="detail-label" data-i18n="dateLabel">DATE</div><div class="detail-value">Friday, December 25, 2026</div></div><div class="detail-row"><div class="detail-label" data-i18n="timeLabel">TIME</div><div class="detail-value">10:00 AM – 12:00 PM</div></div><div class="detail-row"><div class="detail-label" data-i18n="venueLabel">VENUE</div><div class="detail-value">Our Home</div><div class="detail-value small" data-i18n="venueNote">We look forward to welcoming you.</div></div></div></div></section>
+<section class="section"><div class="section-inner"><div class="kicker" data-i18n="withLove">WITH LOVE</div><h2>Masaki Satake <span class="amp">&</span><br>Shwe Yi Pyae Soan</h2><div class="rule"></div><p class="message" data-lang-content="en">Thank you for being part of our story. We cannot wait to celebrate this beautiful beginning with you.</p><p class="message jp hidden" data-lang-content="ja">私たちの大切な一日を共に過ごしてくださることに、心より感謝いたします。</p><p class="message mm hidden" data-lang-content="my">ကျွန်ုပ်တို့၏ ဘဝခရီးသစ်အစတွင် အတူရှိပေးကြမည့်အတွက် အထူးကျေးဇူးတင်ရှိပါသည်။</p></div></section>
+<footer class="footer"><div class="names">M <span class="amp">&</span> S</div><p>25 DECEMBER 2026 · OUR HOME</p></footer>
+<script>
+
+const openingCover=document.getElementById('openingCover');
+function openInvitation(){
+  if(document.body.classList.contains('opened')) return;
+  document.body.classList.add('opened');
+  openingCover.classList.add('dismissed');
+  window.setTimeout(()=>openingCover.remove(),950);
+  window.scrollTo({top:0,behavior:'instant'});
 }
-</script>
-  <script type="module" crossorigin src="./assets/index-CHVedRgW.js"></script>
-</head>
-  <body>
-    <div id="root"></div>
-  </body>
-</html>
+document.getElementById('openInvitation').addEventListener('click',openInvitation);
+openingCover.addEventListener('click',openInvitation);
+openingCover.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();openInvitation();}});
+
+const copy={en:{eyebrow:'WITH JOY IN OUR HEARTS',invite:'Wedding Invitation',scroll:'PLEASE SCROLL',together:'A DAY TO CELEBRATE LOVE',dear:'Dear Family & Friends',when:'SAVE THE DATE',celebrate:'The Celebration',days:'DAYS',hours:'HOURS',minutes:'MINUTES',seconds:'SECONDS',dateLabel:'DATE',timeLabel:'TIME',venueLabel:'VENUE',venueNote:'We look forward to welcoming you.',withLove:'WITH LOVE'},ja:{eyebrow:'心を込めて',invite:'結婚式のご招待',scroll:'スクロールしてください',together:'愛を祝う特別な一日',dear:'大切なご家族・ご友人の皆さまへ',when:'大切な日をお知らせします',celebrate:'結婚のお祝い',days:'日',hours:'時間',minutes:'分',seconds:'秒',dateLabel:'日付',timeLabel:'時間',venueLabel:'会場',venueNote:'皆さまをお迎えできることを楽しみにしております。',withLove:'愛を込めて'},my:{eyebrow:'ချစ်ခြင်းမေတ္တာများဖြင့်',invite:'မင်္ဂလာဖိတ်စာ',scroll:'အောက်သို့ ဆင်းကြည့်ပါ',together:'ချစ်ခြင်းမေတ္တာကို ဆင်နွှဲမည့်နေ့',dear:'ချစ်ခင်ရပါသော မိသားစုနှင့် မိတ်ဆွေများ',when:'ရက်စွဲကို မှတ်သားထားပေးပါ',celebrate:'မင်္ဂလာအခမ်းအနား',days:'ရက်',hours:'နာရီ',minutes:'မိနစ်',seconds:'စက္ကန့်',dateLabel:'ရက်စွဲ',timeLabel:'အချိန်',venueLabel:'နေရာ',venueNote:'လာရောက်ချီးမြှင့်ပေးကြမည်ဟု မျှော်လင့်ပါသည်။',withLove:'မေတ္တာဖြင့်'}};
+function setLang(lang){document.documentElement.lang=lang;document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=copy[lang][el.dataset.i18n]);document.querySelectorAll('[data-lang-content]').forEach(el=>el.classList.toggle('hidden',el.dataset.langContent!==lang));document.querySelectorAll('.langbar button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));}
+document.querySelectorAll('.langbar button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+function tick(){const target=new Date('2026-12-25T10:00:00+09:00').getTime(),now=Date.now(),diff=target-now;if(diff<=0){document.getElementById('countdown').innerHTML='<div class="unit"><strong>♥</strong><span>THE DAY IS HERE</span></div>';return;}const vals={days:Math.floor(diff/86400000),hours:Math.floor(diff%86400000/3600000),minutes:Math.floor(diff%3600000/60000),seconds:Math.floor(diff%60000/1000)};Object.entries(vals).forEach(([k,v])=>document.getElementById(k).textContent=String(v).padStart(2,'0'));}tick();setInterval(tick,1000);
+</script></body></html>
