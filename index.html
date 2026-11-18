@@ -9,43 +9,46 @@
 <style>
 :root{--paper:#f8f4ec;--cream:#efe6d7;--gold:#b3945d;--deep:#75603f;--ink:#4b4034;--muted:#8d806e}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:'Cormorant Garamond',serif}button{font:inherit}.langbar{position:fixed;z-index:10;top:16px;right:16px;display:flex;gap:4px;padding:5px;border:1px solid #d8c8a8;border-radius:30px;background:#f8f4ecdf;backdrop-filter:blur(8px)}.langbar button{border:0;background:transparent;color:var(--deep);padding:7px 10px;border-radius:22px;font:500 11px 'Noto Sans JP',sans-serif;cursor:pointer}.langbar button.active{background:var(--deep);color:#fff}.hero{min-height:100svh;display:grid;place-items:center;padding:76px 22px 48px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 42%,#fffdf8 0,#f8f4ec 54%,#eee4d4 100%)}.frame{width:min(100%,620px);min-height:690px;border:1px solid #c9ae7c;outline:1px solid #e3d5bd;outline-offset:7px;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:60px 28px}.frame:before,.frame:after{content:'❧';position:absolute;color:#c2a875;font-size:44px;opacity:.8}.frame:before{top:12px;left:18px;transform:rotate(-35deg)}.frame:after{bottom:12px;right:18px;transform:rotate(145deg)}.ornament{position:absolute;width:170px;height:170px;border:1px solid #d9c7a4;border-radius:50%;opacity:.26}.ornament.one{top:-90px;right:-65px}.ornament.two{bottom:-95px;left:-65px}.hero-content{max-width:470px;position:relative;z-index:1}.eyebrow{font:500 10px 'Noto Sans JP',sans-serif;letter-spacing:.32em;color:var(--gold);text-transform:uppercase}.hero h1{font-weight:400;font-size:clamp(54px,11vw,88px);line-height:.92;margin:34px 0 16px;color:#806b49}.amp{font-style:italic;color:#b69a68;font-size:.76em}.rule{width:70px;height:1px;background:#b99d6c;margin:27px auto}.subtitle{font-size:19px;letter-spacing:.17em;color:var(--deep)}.date{font-size:25px;letter-spacing:.12em;margin-top:42px;color:var(--deep)}.time{font:11px 'Noto Sans JP',sans-serif;letter-spacing:.2em;color:var(--muted);margin-top:9px}.venue{font-size:23px;margin-top:24px;color:var(--deep)}.scroll{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font:9px 'Noto Sans JP',sans-serif;letter-spacing:.25em;color:#a18b66}.scroll:after{content:'↓';display:block;text-align:center;font-size:17px;margin-top:7px}.section{padding:95px 22px;text-align:center}.section-inner{max-width:760px;margin:auto}.kicker{font:10px 'Noto Sans JP',sans-serif;letter-spacing:.3em;color:var(--gold)}h2{font-weight:400;font-size:clamp(36px,7vw,52px);color:#806b49;margin:16px 0 24px}.message{font-size:22px;line-height:1.6;max-width:600px;margin:0 auto;color:#6d5c45}.message.jp,.message.mm{font:14px/2 'Noto Sans JP','Noto Sans Myanmar',sans-serif}.message.mm{font-family:'Noto Sans Myanmar',sans-serif}.countdown{display:flex;justify-content:center;gap:clamp(12px,4vw,38px);margin:42px auto 0}.unit strong{display:block;font-size:42px;font-weight:400;color:#8d744c}.unit span{font:9px 'Noto Sans JP',sans-serif;letter-spacing:.16em;color:var(--muted)}.details{background:#f0e8db}.detail-card{max-width:560px;margin:36px auto 0;padding:42px 22px;border:1px solid #cbb58c;outline:1px solid #e2d5bd;outline-offset:6px}.detail-row{padding:17px 0;border-bottom:1px solid #ddcfb7}.detail-row:last-child{border:0}.detail-label{font:9px 'Noto Sans JP',sans-serif;letter-spacing:.25em;color:var(--gold)}.detail-value{font-size:27px;color:#6f5a3b;margin-top:8px}.detail-value.small{font-size:19px}.footer{padding:58px 20px 70px;text-align:center}.footer .names{font-size:42px;color:#806b49}.footer p{font:10px 'Noto Sans JP',sans-serif;letter-spacing:.18em;color:var(--muted)}.hidden{display:none!important}@media(max-width:520px){.frame{min-height:620px;padding:45px 18px}.hero h1{font-size:60px}.section{padding:76px 22px}.message{font-size:19px}}@media(prefers-reduced-motion:no-preference){.hero-content{animation:appear 1.4s ease both}@keyframes appear{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}}
 
-/* Interactive invitation cover */
+/* Envelope-style interactive opening screen */
 body:not(.opened)>nav,body:not(.opened)>header,body:not(.opened)>section,body:not(.opened)>footer{visibility:hidden}
-.opening-cover{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:24px;background:radial-gradient(ellipse at center,#fffdf8 0%,#f4ecdf 72%,#e9ddc9 100%);transition:opacity .9s ease,visibility .9s ease}
-.opening-cover::before,.opening-cover::after{content:"";position:absolute;inset:18px;border:1px solid #c8ad7b;pointer-events:none}
-.opening-cover::after{inset:25px;border-color:#e0d2b7}
-.cover-card{width:min(100%,440px);min-height:570px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 28px;background:linear-gradient(145deg,#fffdf9,#f6efe4);border:1px solid #c7aa75;box-shadow:0 18px 55px #806b4920;color:#75603f;cursor:pointer;transition:transform .35s ease,box-shadow .35s ease}
-.cover-card:hover{transform:translateY(-4px);box-shadow:0 24px 65px #806b4930}
-.cover-card:before,.cover-card:after{content:"❧";position:absolute;color:#b99b67;font-size:42px}
-.cover-card:before{top:15px;left:19px;transform:rotate(-35deg)}
-.cover-card:after{bottom:15px;right:19px;transform:rotate(145deg)}
-.cover-kicker{font:10px 'Noto Sans JP',sans-serif;letter-spacing:.32em;color:#ad925f}
-.cover-monogram{width:76px;height:76px;border:1px solid #c7aa75;border-radius:50%;display:grid;place-items:center;margin:25px auto 27px;font-size:31px;color:#a98a55}
-.cover-names{font-size:clamp(42px,10vw,60px);line-height:.95;font-weight:400;color:#806b49;margin:0}
-.cover-names span{font-style:italic;color:#b69a68;font-size:.75em}
-.cover-rule{width:64px;height:1px;background:#b99d6c;margin:25px auto}
-.cover-date{font-size:18px;letter-spacing:.13em}
-.cover-venue{font-size:20px;margin-top:10px}
-.open-button{margin-top:36px;padding:13px 28px;border:1px solid #b99d6c;background:#806b49;color:#fffaf1;font:11px 'Noto Sans JP',sans-serif;letter-spacing:.18em;cursor:pointer;transition:background .2s ease}
-.open-button:hover{background:#9b8052}
-.cover-hint{font:9px 'Noto Sans JP',sans-serif;letter-spacing:.16em;color:#9b896c;margin-top:15px}
+.opening-cover{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:clamp(14px,3vw,42px);background:radial-gradient(ellipse at center,#393633 0%,#292725 75%);transition:opacity .8s ease,visibility .8s ease}
+.envelope{position:relative;width:min(92vw,1280px);aspect-ratio:1.34;background:#eeeae0;box-shadow:0 22px 65px #0005;isolation:isolate;cursor:pointer;perspective:1400px;overflow:visible}
+.envelope-paper{position:absolute;inset:0;background:linear-gradient(135deg,#e7e3d9,#f1eee6);border:1px solid #d8d2c5}
+.envelope-left,.envelope-right,.envelope-bottom{position:absolute;inset:0;pointer-events:none}
+.envelope-left{background:#e5e1d8;clip-path:polygon(0 0,52% 50%,0 100%);z-index:2}
+.envelope-right{background:#e9e5dc;clip-path:polygon(100% 0,48% 50%,100% 100%);z-index:2}
+.envelope-bottom{background:linear-gradient(145deg,#f4f1e9,#e9e5dc);clip-path:polygon(0 100%,50% 47%,100% 100%);z-index:3}
+.envelope-flap{position:absolute;inset:0;background:linear-gradient(160deg,#dedacf,#d9d4c8);clip-path:polygon(0 0,100% 0,50% 53%);transform-origin:50% 0%;z-index:5;transition:transform 1.15s cubic-bezier(.2,.72,.2,1),filter 1s ease;backface-visibility:hidden}
+.envelope-flap:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#ffffff12,#a99f8b10)}
+.envelope-seam{position:absolute;inset:0;z-index:4;pointer-events:none;background:linear-gradient(143deg,transparent 49.82%,#d5d0c4 50%,transparent 50.2%),linear-gradient(217deg,transparent 49.82%,#d5d0c4 50%,transparent 50.2%)}
+.envelope-seal{position:absolute;z-index:7;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(94px,12vw,160px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 38% 32%,#b96f69,#a85d59 68%,#914b48);border:8px solid #9c514d;box-shadow:0 8px 22px #44352c35;color:#fff0e6;font:italic 500 clamp(20px,2.5vw,34px) 'Cormorant Garamond',serif;transition:opacity .35s ease,transform .5s ease;cursor:pointer}
+.envelope-seal:hover{transform:translate(-50%,-50%) scale(1.05)}
+.envelope-caption{position:absolute;z-index:1;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#75603f;pointer-events:none}
+.envelope-caption small{font:10px 'Noto Sans JP',sans-serif;letter-spacing:.28em;color:#ad925f}
+.envelope-caption strong{font:clamp(26px,4vw,52px) 'Cormorant Garamond',serif;font-weight:400;margin-top:12px}
+.opening-cover.opening .envelope-flap{transform:rotateX(180deg);filter:brightness(1.04);z-index:1}
+.opening-cover.opening .envelope-seal{opacity:0;transform:translate(-50%,-50%) scale(.65)}
 .opening-cover.dismissed{opacity:0;visibility:hidden;pointer-events:none}
-@media(max-width:520px){.cover-card{min-height: min(76svh,570px);padding:40px 20px}.opening-cover:before{inset:12px}.opening-cover:after{inset:18px}}
-@media(prefers-reduced-motion:no-preference){.cover-card{animation:coverRise 1s ease both}@keyframes coverRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}}
+@media(max-width:650px){.envelope{width:94vw;aspect-ratio:1.05}.opening-cover{padding:12px}.envelope-seal{width:88px;border-width:6px}.envelope-caption strong{font-size:30px}}
+@media(prefers-reduced-motion:reduce){.envelope-flap,.opening-cover{transition:none}}
+
 
 </style></head>
 <body>
 
 <div class="opening-cover" id="openingCover" role="button" tabindex="0" aria-label="Open wedding invitation">
-  <div class="cover-card">
-    <div class="cover-kicker">A CELEBRATION OF LOVE</div>
-    <div class="cover-monogram">M <span style="font-style:italic;color:#b69a68">&</span> S</div>
-    <h1 class="cover-names">Masaki<br><span>&</span><br>Shwe Yi</h1>
-    <div class="cover-rule"></div>
-    <div class="cover-date">25 · 12 · 2026</div>
-    <div class="cover-venue">Our Home</div>
-    <button class="open-button" id="openInvitation" type="button">OPEN INVITATION</button>
-    <div class="cover-hint">PLEASE TAP TO OPEN</div>
+  <div class="envelope" id="envelope">
+    <div class="envelope-paper"></div>
+    <div class="envelope-caption">
+      <small>A CELEBRATION OF LOVE</small>
+      <strong>Masaki &amp; Shwe Yi</strong>
+    </div>
+    <div class="envelope-left"></div>
+    <div class="envelope-right"></div>
+    <div class="envelope-bottom"></div>
+    <div class="envelope-seam"></div>
+    <div class="envelope-flap"></div>
+    <button class="envelope-seal" id="openInvitation" type="button" aria-label="Open invitation">Open</button>
   </div>
 </div>
 
@@ -60,10 +63,13 @@ body:not(.opened)>nav,body:not(.opened)>header,body:not(.opened)>section,body:no
 const openingCover=document.getElementById('openingCover');
 function openInvitation(){
   if(document.body.classList.contains('opened')) return;
-  document.body.classList.add('opened');
-  openingCover.classList.add('dismissed');
-  window.setTimeout(()=>openingCover.remove(),950);
-  window.scrollTo({top:0,behavior:'instant'});
+  openingCover.classList.add('opening');
+  window.setTimeout(()=>{
+    document.body.classList.add('opened');
+    openingCover.classList.add('dismissed');
+    window.setTimeout(()=>openingCover.remove(),850);
+    window.scrollTo({top:0,behavior:'instant'});
+  },1050);
 }
 document.getElementById('openInvitation').addEventListener('click',openInvitation);
 openingCover.addEventListener('click',openInvitation);
