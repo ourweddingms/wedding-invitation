@@ -33,6 +33,26 @@ body:not(.opened)>nav,body:not(.opened)>header,body:not(.opened)>section,body:no
 @media(prefers-reduced-motion:reduce){.envelope-flap,.opening-cover{transition:none}}
 
 
+
+/* Original couple gallery section */
+.gallery-section{background:#fbf8f1;padding:88px 22px 100px;text-align:center}
+.gallery-wrap{max-width:1040px;margin:0 auto}
+.gallery-intro{max-width:620px;margin:0 auto 34px;color:#78694f;font-size:19px;line-height:1.7}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:38px auto 0}
+.gallery-tile{position:relative;aspect-ratio:4/5;overflow:hidden;background:linear-gradient(145deg,#e9dfce,#f7f2e8);border:1px solid #d8c8a8;cursor:zoom-in}
+.gallery-tile:nth-child(2n){transform:translateY(18px)}
+.gallery-tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.gallery-tile:hover img{transform:scale(1.045)}
+.gallery-tile .photo-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#9a835b;padding:18px}
+.photo-placeholder .photo-mark{font-size:34px;opacity:.75;margin-bottom:10px}
+.photo-placeholder small{font:10px 'Noto Sans JP',sans-serif;letter-spacing:.18em}
+.gallery-note{font:11px/1.8 'Noto Sans JP','Noto Sans Myanmar',sans-serif;color:#95866e;margin:34px auto 0;max-width:600px}
+.photo-lightbox{position:fixed;inset:0;z-index:1200;background:#201d1beF;display:none;align-items:center;justify-content:center;padding:24px}
+.photo-lightbox.show{display:flex}
+.photo-lightbox img{max-width:min(92vw,1000px);max-height:85vh;object-fit:contain;box-shadow:0 18px 60px #0007}
+.lightbox-close{position:absolute;top:18px;right:22px;border:1px solid #e8dcc7;background:#f8f4ec;color:#6f5a3b;border-radius:50%;width:42px;height:42px;font-size:24px;cursor:pointer}
+@media(max-width:650px){.gallery-section{padding:72px 16px 82px}.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.gallery-tile:nth-child(2n){transform:none}.gallery-intro{font-size:17px}}
+
 </style></head>
 <body>
 
@@ -57,6 +77,30 @@ body:not(.opened)>nav,body:not(.opened)>header,body:not(.opened)>section,body:no
 <section class="section"><div class="section-inner"><div class="kicker" data-i18n="together">A DAY TO CELEBRATE LOVE</div><h2 data-i18n="dear">Dear Family & Friends</h2><p class="message" data-lang-content="en">With grateful hearts, we invite you to share in the joy of our wedding celebration. Your presence will make our special day even more meaningful.</p><p class="message jp hidden" data-lang-content="ja">私たちの新たな門出を、皆さまと一緒にお祝いできましたら幸いです。心を込めて、皆さまをお招きいたします。</p><p class="message mm hidden" data-lang-content="my">ကျွန်ုပ်တို့၏ မင်္ဂလာနေ့လေးတွင် မိသားစုနှင့် မိတ်ဆွေများအတူ ပျော်ရွှင်စွာ ဆင်နွှဲနိုင်ရန် လေးစားချစ်ခင်စွာ ဖိတ်ကြားအပ်ပါသည်။</p></div></section>
 <section class="section details"><div class="section-inner"><div class="kicker" data-i18n="when">SAVE THE DATE</div><h2 data-i18n="celebrate">The Celebration</h2><div class="countdown" id="countdown"><div class="unit"><strong id="days">—</strong><span data-i18n="days">DAYS</span></div><div class="unit"><strong id="hours">—</strong><span data-i18n="hours">HOURS</span></div><div class="unit"><strong id="minutes">—</strong><span data-i18n="minutes">MINUTES</span></div><div class="unit"><strong id="seconds">—</strong><span data-i18n="seconds">SECONDS</span></div></div><div class="detail-card"><div class="detail-row"><div class="detail-label" data-i18n="dateLabel">DATE</div><div class="detail-value">Friday, December 25, 2026</div></div><div class="detail-row"><div class="detail-label" data-i18n="timeLabel">TIME</div><div class="detail-value">10:00 AM – 12:00 PM</div></div><div class="detail-row"><div class="detail-label" data-i18n="venueLabel">VENUE</div><div class="detail-value">Our Home</div><div class="detail-value small" data-i18n="venueNote">We look forward to welcoming you.</div></div></div></div></section>
 <section class="section"><div class="section-inner"><div class="kicker" data-i18n="withLove">WITH LOVE</div><h2>Masaki Satake <span class="amp">&</span><br>Shwe Yi Pyae Soan</h2><div class="rule"></div><p class="message" data-lang-content="en">Thank you for being part of our story. We cannot wait to celebrate this beautiful beginning with you.</p><p class="message jp hidden" data-lang-content="ja">私たちの大切な一日を共に過ごしてくださることに、心より感謝いたします。</p><p class="message mm hidden" data-lang-content="my">ကျွန်ုပ်တို့၏ ဘဝခရီးသစ်အစတွင် အတူရှိပေးကြမည့်အတွက် အထူးကျေးဇူးတင်ရှိပါသည်။</p></div></section>
+
+<section class="gallery-section" id="gallery">
+  <div class="gallery-wrap">
+    <div class="kicker" data-i18n="galleryKicker">OUR MEMORIES</div>
+    <h2 data-i18n="galleryTitle">A Little Gallery of Us</h2>
+    <p class="gallery-intro" data-lang-content="en">A few moments, a thousand memories. We are happy to share a little piece of our story with you.</p>
+    <p class="gallery-intro jp hidden" data-lang-content="ja">ふたりの大切な思い出を、皆さまと少しだけ共有できれば嬉しいです。</p>
+    <p class="gallery-intro mm hidden" data-lang-content="my">ကျွန်ုပ်တို့နှစ်ဦးရဲ့ အမှတ်တရလေးတွေကို မိသားစု၊ မိတ်ဆွေများနဲ့ မျှဝေလိုပါတယ်။</p>
+    <div class="gallery-grid">
+      <button class="gallery-tile" type="button" data-photo="photos/photo-1.jpg" aria-label="Photo 1"><span class="photo-placeholder"><span class="photo-mark">✧</span><small>OUR MOMENT 01</small></span><img src="photos/photo-1.jpg" alt="Masaki and Shwe Yi memory 1" onerror="this.style.display='none'"></button>
+      <button class="gallery-tile" type="button" data-photo="photos/photo-2.jpg" aria-label="Photo 2"><span class="photo-placeholder"><span class="photo-mark">✧</span><small>OUR MOMENT 02</small></span><img src="photos/photo-2.jpg" alt="Masaki and Shwe Yi memory 2" onerror="this.style.display='none'"></button>
+      <button class="gallery-tile" type="button" data-photo="photos/photo-3.jpg" aria-label="Photo 3"><span class="photo-placeholder"><span class="photo-mark">✧</span><small>OUR MOMENT 03</small></span><img src="photos/photo-3.jpg" alt="Masaki and Shwe Yi memory 3" onerror="this.style.display='none'"></button>
+      <button class="gallery-tile" type="button" data-photo="photos/photo-4.jpg" aria-label="Photo 4"><span class="photo-placeholder"><span class="photo-mark">✧</span><small>OUR MOMENT 04</small></span><img src="photos/photo-4.jpg" alt="Masaki and Shwe Yi memory 4" onerror="this.style.display='none'"></button>
+      <button class="gallery-tile" type="button" data-photo="photos/photo-5.jpg" aria-label="Photo 5"><span class="photo-placeholder"><span class="photo-mark">✧</span><small>OUR MOMENT 05</small></span><img src="photos/photo-5.jpg" alt="Masaki and Shwe Yi memory 5" onerror="this.style.display='none'"></button>
+      <button class="gallery-tile" type="button" data-photo="photos/photo-6.jpg" aria-label="Photo 6"><span class="photo-placeholder"><span class="photo-mark">✧</span><small>OUR MOMENT 06</small></span><img src="photos/photo-6.jpg" alt="Masaki and Shwe Yi memory 6" onerror="this.style.display='none'"></button>
+    </div>
+    <p class="gallery-note" data-i18n="galleryNote">Our memories, kept close and shared with love.</p>
+  </div>
+</section>
+<div class="photo-lightbox" id="photoLightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close photo">×</button>
+  <img id="lightboxImage" src="" alt="Wedding gallery photo">
+</div>
+
 <footer class="footer"><div class="names">M <span class="amp">&</span> S</div><p>25 DECEMBER 2026 · OUR HOME</p></footer>
 <script>
 
@@ -75,7 +119,21 @@ document.getElementById('openInvitation').addEventListener('click',openInvitatio
 openingCover.addEventListener('click',openInvitation);
 openingCover.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();openInvitation();}});
 
-const copy={en:{eyebrow:'WITH JOY IN OUR HEARTS',invite:'Wedding Invitation',scroll:'PLEASE SCROLL',together:'A DAY TO CELEBRATE LOVE',dear:'Dear Family & Friends',when:'SAVE THE DATE',celebrate:'The Celebration',days:'DAYS',hours:'HOURS',minutes:'MINUTES',seconds:'SECONDS',dateLabel:'DATE',timeLabel:'TIME',venueLabel:'VENUE',venueNote:'We look forward to welcoming you.',withLove:'WITH LOVE'},ja:{eyebrow:'心を込めて',invite:'結婚式のご招待',scroll:'スクロールしてください',together:'愛を祝う特別な一日',dear:'大切なご家族・ご友人の皆さまへ',when:'大切な日をお知らせします',celebrate:'結婚のお祝い',days:'日',hours:'時間',minutes:'分',seconds:'秒',dateLabel:'日付',timeLabel:'時間',venueLabel:'会場',venueNote:'皆さまをお迎えできることを楽しみにしております。',withLove:'愛を込めて'},my:{eyebrow:'ချစ်ခြင်းမေတ္တာများဖြင့်',invite:'မင်္ဂလာဖိတ်စာ',scroll:'အောက်သို့ ဆင်းကြည့်ပါ',together:'ချစ်ခြင်းမေတ္တာကို ဆင်နွှဲမည့်နေ့',dear:'ချစ်ခင်ရပါသော မိသားစုနှင့် မိတ်ဆွေများ',when:'ရက်စွဲကို မှတ်သားထားပေးပါ',celebrate:'မင်္ဂလာအခမ်းအနား',days:'ရက်',hours:'နာရီ',minutes:'မိနစ်',seconds:'စက္ကန့်',dateLabel:'ရက်စွဲ',timeLabel:'အချိန်',venueLabel:'နေရာ',venueNote:'လာရောက်ချီးမြှင့်ပေးကြမည်ဟု မျှော်လင့်ပါသည်။',withLove:'မေတ္တာဖြင့်'}};
+
+document.querySelectorAll('.gallery-tile').forEach(tile=>{
+  tile.addEventListener('click',()=>{
+    const img=tile.querySelector('img');
+    if(!img || img.style.display==='none' || !img.complete || !img.naturalWidth) return;
+    document.getElementById('lightboxImage').src=img.src;
+    document.getElementById('photoLightbox').classList.add('show');
+  });
+});
+function closeLightbox(){document.getElementById('photoLightbox').classList.remove('show');document.getElementById('lightboxImage').src='';}
+document.getElementById('lightboxClose').addEventListener('click',closeLightbox);
+document.getElementById('photoLightbox').addEventListener('click',e=>{if(e.target.id==='photoLightbox')closeLightbox();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+
+const copy={en:{eyebrow:'WITH JOY IN OUR HEARTS',invite:'Wedding Invitation',scroll:'PLEASE SCROLL',together:'A DAY TO CELEBRATE LOVE',dear:'Dear Family & Friends',when:'SAVE THE DATE',celebrate:'The Celebration',days:'DAYS',hours:'HOURS',minutes:'MINUTES',seconds:'SECONDS',dateLabel:'DATE',timeLabel:'TIME',venueLabel:'VENUE',venueNote:'We look forward to welcoming you.',withLove:'WITH LOVE',galleryKicker:'OUR MEMORIES',galleryTitle:'A Little Gallery of Us',galleryNote:'Our memories, kept close and shared with love.'},ja:{eyebrow:'心を込めて',invite:'結婚式のご招待',scroll:'スクロールしてください',together:'愛を祝う特別な一日',dear:'大切なご家族・ご友人の皆さまへ',when:'大切な日をお知らせします',celebrate:'結婚のお祝い',days:'日',hours:'時間',minutes:'分',seconds:'秒',dateLabel:'日付',timeLabel:'時間',venueLabel:'会場',venueNote:'皆さまをお迎えできることを楽しみにしております。',withLove:'愛を込めて',galleryKicker:'ふたりの思い出',galleryTitle:'ふたりの小さなギャラリー',galleryNote:'大切な思い出を、心を込めて。'},my:{eyebrow:'ချစ်ခြင်းမေတ္တာများဖြင့်',invite:'မင်္ဂလာဖိတ်စာ',scroll:'အောက်သို့ ဆင်းကြည့်ပါ',together:'ချစ်ခြင်းမေတ္တာကို ဆင်နွှဲမည့်နေ့',dear:'ချစ်ခင်ရပါသော မိသားစုနှင့် မိတ်ဆွေများ',when:'ရက်စွဲကို မှတ်သားထားပေးပါ',celebrate:'မင်္ဂလာအခမ်းအနား',days:'ရက်',hours:'နာရီ',minutes:'မိနစ်',seconds:'စက္ကန့်',dateLabel:'ရက်စွဲ',timeLabel:'အချိန်',venueLabel:'နေရာ',venueNote:'လာရောက်ချီးမြှင့်ပေးကြမည်ဟု မျှော်လင့်ပါသည်။',withLove:'မေတ္တာဖြင့်',galleryKicker:'ကျွန်ုပ်တို့၏ အမှတ်တရများ',galleryTitle:'နှစ်ဦးရဲ့ အမှတ်တရဓာတ်ပုံများ',galleryNote:'အမှတ်တရလေးတွေကို မေတ္တာဖြင့် မျှဝေပါသည်။'}};
 function setLang(lang){document.documentElement.lang=lang;document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=copy[lang][el.dataset.i18n]);document.querySelectorAll('[data-lang-content]').forEach(el=>el.classList.toggle('hidden',el.dataset.langContent!==lang));document.querySelectorAll('.langbar button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));}
 document.querySelectorAll('.langbar button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
 function tick(){const target=new Date('2026-12-25T10:00:00+09:00').getTime(),now=Date.now(),diff=target-now;if(diff<=0){document.getElementById('countdown').innerHTML='<div class="unit"><strong>♥</strong><span>THE DAY IS HERE</span></div>';return;}const vals={days:Math.floor(diff/86400000),hours:Math.floor(diff%86400000/3600000),minutes:Math.floor(diff%3600000/60000),seconds:Math.floor(diff%60000/1000)};Object.entries(vals).forEach(([k,v])=>document.getElementById(k).textContent=String(v).padStart(2,'0'));}tick();setInterval(tick,1000);
