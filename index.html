@@ -63,7 +63,7 @@ body:not(.opened)>nav,body:not(.opened)>header,body:not(.opened)>section,body:no
 .name-reveal-date{font:11px 'Noto Sans JP',sans-serif;letter-spacing:.2em;color:#8d806e}
 @keyframes nameRise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:520px){.name-reveal-inner{padding:42px 14px}.name-reveal-kicker{font-size:8px}.name-reveal-names{font-size:clamp(38px,10vw,54px)}}
-\n</style>
+</style>
 <style id="modern-japanese-editorial-redesign">
 :root{
  --paper:#f4f2ec;--cream:#e8e5dc;--gold:#b77a58;--deep:#182a3a;
@@ -224,6 +224,94 @@ h2{font-size:clamp(38px,6vw,58px);color:#1d3548;letter-spacing:-.025em}
 }
 </style>
 
+
+<style id="classic-elegant-gold-final">
+:root{
+ --paper:#fbf8f1;--cream:#f1e8d7;--gold:#b18a45;--deep:#80643b;
+ --ink:#514332;--muted:#91816b;
+}
+html,body{background:var(--paper);color:var(--ink)}
+body{font-family:'Cormorant Garamond',Georgia,serif}
+.langbar{border:1px solid #d8c49b;border-radius:28px;background:#fbf8f1ed}
+.langbar button{color:#80643b}
+.langbar button.active{background:#80643b;color:#fff}
+.hero{background:radial-gradient(ellipse at 50% 45%,#fffefa 0%,#fbf8f1 58%,#eee3cf 100%)}
+.frame{
+ width:min(100%,1020px);min-height:660px;display:grid;
+ grid-template-columns:minmax(0,1fr) minmax(0,.92fr);
+ border:1px solid #c9ad75;outline:1px solid #e4d7bc;outline-offset:7px;
+ background:#fffdf8;overflow:hidden;text-align:left;padding:0;
+}
+.frame:before,.frame:after{content:"❧";position:absolute;color:#b99a61;font-size:34px;opacity:.7;z-index:2}
+.frame:before{top:10px;left:16px;transform:rotate(-35deg)}
+.frame:after{bottom:10px;right:16px;transform:rotate(145deg)}
+.hero-content{grid-column:1;grid-row:1;align-self:center;padding:65px clamp(28px,5vw,65px);max-width:none;text-align:center}
+.hero-content:before,.hero-content:after{display:none!important}
+.hero h1{color:#80643b;font-size:clamp(52px,6vw,78px);line-height:.9}
+.hero-fullnames{color:#9a8054}
+.eyebrow,.kicker{color:#ad8a4c}
+.amp{color:#b18a45}
+.rule{background:#b18a45}
+.subtitle,.date,.venue{color:#80643b}
+.time{color:#92836e}
+.hero-photo{grid-column:2;grid-row:1;min-width:0;min-height:100%;position:relative;overflow:hidden;background:#e8deca}
+.hero-photo img{display:block;width:100%;height:100%;min-height:660px;object-fit:cover;object-position:center 42%;filter:sepia(.06) saturate(.88)}
+.hero-photo:after{content:"";position:absolute;inset:12px;border:1px solid #fff9;pointer-events:none}
+.scroll{color:#9a8054}
+.section{background:#fbf8f1}
+h2{color:#80643b}
+.message{color:#6d5b43}
+.details{background:#f2eadc}
+.unit strong{color:#80643b}
+.detail-card{background:#fffdf8;border-color:#c9ad75;outline-color:#e4d7bc}
+.detail-label{color:#ad8a4c}
+.detail-value{color:#80643b}
+.footer{background:#80643b}
+.footer .names{color:#fffaf0}
+.footer p{color:#e8dcc5}
+.gallery-section{background:#fbf8f1}
+.gallery-tile{border:1px solid #d4c19a;background:#eee5d5}
+.gallery-tile img{filter:saturate(.9)}
+.gallery-note{color:#92836e}
+
+/* Three featured photos in the main invitation, independent of the gallery */
+.main-photo-section{padding:86px 22px 100px;text-align:center;background:#f4eddf}
+.main-photo-heading{max-width:680px;margin:0 auto 38px}
+.main-photo-heading h2{font-size:clamp(36px,6vw,54px);font-weight:400;margin:13px 0}
+.main-photo-heading p{font-size:18px;color:#89775b;margin:0}
+.main-photo-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1.12fr 1fr;gap:20px;align-items:center}
+.main-photo{margin:0;position:relative;padding:8px;background:#fffdf8;border:1px solid #d7c49b;box-shadow:0 14px 38px #715b3518}
+.main-photo img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+.main-photo-center{transform:translateY(-16px);padding:10px}
+.main-photo-center img{aspect-ratio:3/4}
+.main-photo-tall{transform:translateY(14px)}
+.opening-cover{
+ background:radial-gradient(ellipse at center,#f4ead7 0%,#dfcfad 72%,#c7ae7d 100%);
+}
+.envelope{background:#f7f0e2;box-shadow:0 24px 70px #58472c44}
+.envelope-paper{background:linear-gradient(135deg,#fffdf7,#eee4d1);border:1px solid #d6c49f}
+.envelope-left{background:#eee4d2}
+.envelope-right{background:#f5ecdc}
+.envelope-bottom{background:linear-gradient(145deg,#fffaf0,#e9ddc7)}
+.envelope-flap{background:linear-gradient(160deg,#e5d5b7,#d5c19a)}
+.envelope-seam{background:linear-gradient(143deg,transparent 49.82%,#cbb78f 50%,transparent 50.2%),linear-gradient(217deg,transparent 49.82%,#cbb78f 50%,transparent 50.2%)}
+.envelope-seal{background:radial-gradient(circle at 35% 30%,#d0ad69,#a9823e 72%,#80612f);border-color:#a9823e;color:#fff8e9}
+.envelope-caption{color:#80643b}
+.envelope-caption small{color:#a88749}
+.envelope-caption strong{color:#80643b}
+@media(max-width:650px){
+ .frame{display:flex;flex-direction:column;min-height:0;text-align:center}
+ .hero-content{padding:58px 26px 42px}
+ .hero-photo{width:100%;height:350px;min-height:350px}
+ .hero-photo img{height:350px;min-height:350px;object-position:center 38%}
+ .main-photo-section{padding:70px 16px 82px}
+ .main-photo-grid{grid-template-columns:1fr 1fr;gap:12px}
+ .main-photo-center{transform:translateY(0)}
+ .main-photo-tall{transform:none}
+ .main-photo:nth-child(3){display:none}
+}
+</style>
+
 </head>
 <body>
 
@@ -250,6 +338,19 @@ h2{font-size:clamp(38px,6vw,58px);color:#1d3548;letter-spacing:-.025em}
 <nav class="langbar" aria-label="Language"><button class="active" data-lang="en">EN</button><button data-lang="ja">日本語</button><button data-lang="my">မြန်မာ</button></nav>
 <header class="hero"><div class="frame"><div class="ornament one"></div><div class="ornament two"></div><div class="hero-content"><div class="eyebrow" data-i18n="eyebrow">WITH JOY IN OUR HEARTS</div><h1>Masaki<br><span class="amp">&</span><br>Shwe Yi</h1><div class="hero-fullnames">Masaki Satake &amp; Shwe Yi Pyae Soan</div><div class="rule"></div><div class="subtitle" data-i18n="invite">Wedding Invitation</div><div class="date">25 · 12 · 2026</div><div class="time">10:00 AM — 12:00 PM</div><div class="venue">Our Home</div></div><div class="hero-photo"><img src="photos/photo-5.jpg" alt="Masaki and Shwe Yi together"></div></div><div class="scroll" data-i18n="scroll">PLEASE SCROLL</div></header>
 <section class="section"><div class="section-inner"><div class="kicker" data-i18n="together">A DAY TO CELEBRATE LOVE</div><h2 data-i18n="dear">Dear Family & Friends</h2><p class="message" data-lang-content="en">With grateful hearts, we invite you to share in the joy of our wedding celebration. Your presence will make our special day even more meaningful.</p><p class="message jp hidden" data-lang-content="ja">私たちの新たな門出を、皆さまと一緒にお祝いできましたら幸いです。心を込めて、皆さまをお招きいたします。</p><p class="message mm hidden" data-lang-content="my">ကျွန်ုပ်တို့၏ မင်္ဂလာနေ့လေးတွင် မိသားစုနှင့် မိတ်ဆွေများအတူ ပျော်ရွှင်စွာ ဆင်နွှဲနိုင်ရန် လေးစားချစ်ခင်စွာ ဖိတ်ကြားအပ်ပါသည်။</p></div></section>
+
+<section class="main-photo-section" aria-label="Featured couple photographs">
+  <div class="main-photo-heading">
+    <span class="kicker">A LOVE STORY IN MOMENTS</span>
+    <h2>Our Beautiful Beginning</h2>
+    <p>Three little glimpses of our journey together</p>
+  </div>
+  <div class="main-photo-grid">
+    <figure class="main-photo main-photo-tall"><img src="photos/photo-1.jpg" alt="A favorite moment together"></figure>
+    <figure class="main-photo main-photo-center"><img src="photos/photo-3.jpg" alt="A beautiful memory of the couple"></figure>
+    <figure class="main-photo main-photo-tall"><img src="photos/photo-6.jpg" alt="A special moment from our story"></figure>
+  </div>
+</section>
 <section class="section details"><div class="section-inner"><div class="kicker" data-i18n="when">SAVE THE DATE</div><h2 data-i18n="celebrate">The Celebration</h2><div class="countdown" id="countdown"><div class="unit"><strong id="days">—</strong><span data-i18n="days">DAYS</span></div><div class="unit"><strong id="hours">—</strong><span data-i18n="hours">HOURS</span></div><div class="unit"><strong id="minutes">—</strong><span data-i18n="minutes">MINUTES</span></div><div class="unit"><strong id="seconds">—</strong><span data-i18n="seconds">SECONDS</span></div></div><div class="detail-card"><div class="detail-row"><div class="detail-label" data-i18n="dateLabel">DATE</div><div class="detail-value">Friday, December 25, 2026</div></div><div class="detail-row"><div class="detail-label" data-i18n="timeLabel">TIME</div><div class="detail-value">10:00 AM – 12:00 PM</div></div><div class="detail-row"><div class="detail-label" data-i18n="venueLabel">VENUE</div><div class="detail-value">Our Home</div><div class="detail-value small" data-i18n="venueNote">We look forward to welcoming you.</div></div></div></div></section>
 <section class="section"><div class="section-inner"><div class="kicker" data-i18n="withLove">WITH LOVE</div><h2>Masaki Satake <span class="amp">&</span><br>Shwe Yi Pyae Soan</h2><div class="rule"></div><p class="message" data-lang-content="en">Thank you for being part of our story. We cannot wait to celebrate this beautiful beginning with you.</p><p class="message jp hidden" data-lang-content="ja">私たちの大切な一日を共に過ごしてくださることに、心より感謝いたします。</p><p class="message mm hidden" data-lang-content="my">ကျွန်ုပ်တို့၏ ဘဝခရီးသစ်အစတွင် အတူရှိပေးကြမည့်အတွက် အထူးကျေးဇူးတင်ရှိပါသည်။</p></div></section>
 
